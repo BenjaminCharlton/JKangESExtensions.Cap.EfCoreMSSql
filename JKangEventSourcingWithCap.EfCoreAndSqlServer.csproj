@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DotNetCore.CAP" Version="5.1.4" />
+		<PackageReference Include="DotNetCore.CAP.SqlServer" Version="5.1.4" />
+		<PackageReference Include="JKang.EventSourcing.Persistence.EfCore" Version="1.1.2" />
+		<PackageReference Include="Scrutor" Version="3.3.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\JKangEventSourcingWithCap\JKangEventSourcingWithCap.csproj" />
+	</ItemGroup>
+
+</Project>
