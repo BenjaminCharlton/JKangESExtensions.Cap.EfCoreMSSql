@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;net5.0;netstandard2.1;netstandard2.0</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<PackageTags>JKang EventSourcing DotNetCore CAP EntityFramework Core SqlServer</PackageTags>
+		<PackageProjectUrl>https://github.com/BenjaminCharlton/JKangEventSourcingWithCap</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/BenjaminCharlton/JKangEventSourcingWithCap.EfCoreMSSql</RepositoryUrl>
+		<Description>Extends the JKang.EventSourcing libraries with "Outbox Pattern" functionality provided by the DotNetCore.CAP library. This allows integration events to be published when (and only when) a domain event is successfully persisted to the event stream. This library is coupled to Entity Framework Core and Microsoft SQL Server but you can use the base classes and interfaces in JKangEventSourcingWithCap to support others.</Description>
+		<Copyright>Benjamin Charlton, November 2021</Copyright>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Company>Energetic Apps</Company>
+		<Authors>Benjamin Charlton</Authors>
+		<Version>1.0.3</Version>
+		<PackageReleaseNotes>Now targets .NET 6, .NET 5, .NET standard 2.1 and 2.0.</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
+	  <WarningLevel>5</WarningLevel>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0|AnyCPU'">
+	  <WarningLevel>5</WarningLevel>
+	</PropertyGroup>
+	
+		<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+		<PackageReference Include="DotNetCore.CAP" Version="5.1.4" />
+		<PackageReference Include="DotNetCore.CAP.SqlServer" Version="5.1.4" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+		<PackageReference Include="DotNetCore.CAP" Version="5.1.4" />
+		<PackageReference Include="DotNetCore.CAP.SqlServer" Version="5.1.4" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
+		<PackageReference Include="DotNetCore.CAP" Version="5.1.4" />
+		<PackageReference Include="DotNetCore.CAP.SqlServer" Version="5.1.4" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+		<PackageReference Include="DotNetCore.CAP" Version="3.1.2" />
+		<PackageReference Include="DotNetCore.CAP.SqlServer" Version="3.1.2" />
+		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="JKang.EventSourcing.Persistence.EfCore" Version="1.1.2" />
+		<PackageReference Include="JKangEventSourcingWithCap" Version="1.0.3" />
+		<PackageReference Include="Scrutor" Version="3.3.0" />
+	</ItemGroup>
+
+</Project>
