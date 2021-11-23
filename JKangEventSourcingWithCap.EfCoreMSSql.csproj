@@ -49,7 +49,6 @@
 
 	<ItemGroup>
 		<PackageReference Include="JKang.EventSourcing.Persistence.EfCore" Version="1.1.2" />
-		<PackageReference Include="JKangEventSourcingWithCap" Version="1.0.3" />
 		<PackageReference Include="Scrutor" Version="3.3.0" />
 	</ItemGroup>
 

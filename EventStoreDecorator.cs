@@ -61,9 +61,10 @@ namespace JKang.EventSourcing.Persistence.EfCore
                 if (_domainEventToIntegrationEventMappings.CanConvert(domainEventType))
                 {
                     dynamic integrationEvent = _domainEventToIntegrationEventMappings[domainEventType].Invoke(@event);
-                    await Publisher.PublishAsync(@event.GetType().Name, integrationEvent, default(string), cancellationToken);
+                    string? callbackName = default;
+                    await Publisher.PublishAsync(domainEventType.Name, integrationEvent, callbackName, cancellationToken);
                 }
             }
-        }
+        } 
     }
 }
