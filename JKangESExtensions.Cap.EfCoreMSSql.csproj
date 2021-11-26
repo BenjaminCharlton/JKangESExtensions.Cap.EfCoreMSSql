@@ -13,8 +13,8 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<Company>Energetic Apps</Company>
 		<Authors>Benjamin Charlton</Authors>
-		<Version>1.0.3</Version>
-		<PackageReleaseNotes>Now targets .NET 6, .NET 5, .NET standard 2.1 and 2.0.</PackageReleaseNotes>
+		<Version>2.0.0</Version>
+		<PackageReleaseNotes>Refactored so that abstractions can be used to extend JKang.EventSourcing in other ways besides using DotNetCore.Cap. For example, we can now support MassTransit.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
