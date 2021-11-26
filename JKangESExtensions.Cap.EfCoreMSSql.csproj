@@ -5,9 +5,9 @@
 		<LangVersion>latest</LangVersion>
 		<Nullable>enable</Nullable>
 		<PackageTags>JKang EventSourcing DotNetCore CAP EntityFramework Core SqlServer</PackageTags>
-		<PackageProjectUrl>https://github.com/BenjaminCharlton/JKangEventSourcingWithCap</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/BenjaminCharlton/JKangEventSourcingWithCap.EfCoreMSSql</RepositoryUrl>
-		<Description>Extends the JKang.EventSourcing libraries with "Outbox Pattern" functionality provided by the DotNetCore.CAP library. This allows integration events to be published when (and only when) a domain event is successfully persisted to the event stream. This library is coupled to Entity Framework Core and Microsoft SQL Server but you can use the base classes and interfaces in JKangEventSourcingWithCap to support others.</Description>
+		<PackageProjectUrl>https://github.com/BenjaminCharlton/JKangESExtensions.Cap</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/BenjaminCharlton/JKangESExtensions.Cap.EfCoreMSSql</RepositoryUrl>
+		<Description>Extends the JKang.EventSourcing libraries with "Outbox Pattern" functionality provided by the DotNetCore.CAP library. This allows integration events to be published when (and only when) a domain event is successfully persisted to the event stream. This library is coupled to Entity Framework Core and Microsoft SQL Server but you can use the base classes and interfaces in JKangESExtensions.Cap to support others.</Description>
 		<Copyright>Benjamin Charlton, November 2021</Copyright>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -18,14 +18,14 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
-	  <WarningLevel>5</WarningLevel>
+		<WarningLevel>5</WarningLevel>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0|AnyCPU'">
-	  <WarningLevel>5</WarningLevel>
+		<WarningLevel>5</WarningLevel>
 	</PropertyGroup>
-	
-		<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
 		<PackageReference Include="DotNetCore.CAP" Version="5.1.4" />
 		<PackageReference Include="DotNetCore.CAP.SqlServer" Version="5.1.4" />
 	</ItemGroup>
@@ -49,7 +49,11 @@
 
 	<ItemGroup>
 		<PackageReference Include="JKang.EventSourcing.Persistence.EfCore" Version="1.1.2" />
-		<PackageReference Include="Scrutor" Version="3.3.0" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\JKangESExtensions.Cap\JKangESExtensions.Cap.csproj" />
+	</ItemGroup>
+
 
 </Project>
